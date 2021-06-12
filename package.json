@@ -1,0 +1,28 @@
+{
+  "name": "horizondiscordinte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Horizon-Networks-Development/HorizonDiscordINTE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Horizon-Networks-Development/HorizonDiscordINTE/issues"
+  },
+  "homepage": "https://github.com/Horizon-Networks-Development/HorizonDiscordINTE#readme",
+  "dependencies": {
+    "dateformat": "^4.5.1",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
+  }
+}
