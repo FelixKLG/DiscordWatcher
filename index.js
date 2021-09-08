@@ -6,7 +6,7 @@ const fs = require(`fs`);
 //require FileSystem
 const Sequelize = require('sequelize');
 //require Sequelize
-const dotenv = require(`dotenv`).config()
+require(`dotenv`).config()
 //require dotenv
 
 
@@ -21,7 +21,7 @@ const fileLog = fs.createWriteStream(`messageLog.txt`, {
 })
 //append files
 
-const channelsAry = ["671892042288332821", "741972500094779392"]
+const channelsAry = ["channel1", "channel2"]
 //monitored channels array
 
 const DBConnection = new Sequelize(process.env.DBNAME, process.env.DBUSER, process.env.DBPASS, {
@@ -52,6 +52,7 @@ client.once(`ready`, () => {
 })
 
 client.on(`message`,  async message => {
+    let channelName = message.channel.name
     if ((channelsAry.includes(message.channel.id))) {
     try {await chatDB.create({
         Author: message.author.id,
@@ -59,21 +60,11 @@ client.on(`message`,  async message => {
         channel: message.channel.id,
         time: Number(new Date())
     })} catch (err) {console.log(err)}}
-    if (message.channel.id === `671892042288332821`) {
         try {
-            await Object.defineProperty(global, "channelName", {value: "#staff-chat"})
             const Time = new Date
             await fileLog.write(`[${dateFormat(Time, `GMT:dd:mm:yyyy`)} ${dateFormat(Time, `GMT:HH:MM:ss`)}] ${channelName} (${message.author.username}#${message.author.discriminator}): ${message.content}\n`)
             await WebhookRLY.send(message.content, {avatarURL: message.author.avatarURL({format: "webp", dynamic: true}), username: message.author.username})
         } catch (error) {console.log(error)}
-    } else if (message.channel.id === `741972500094779392`) {
-        try {
-            await Object.defineProperty(global, "channelName", {value: "#developer-chat"})
-            const Time = new Date()
-            await fileLog.write(`[${dateFormat(Time, `GMT:dd:mm:yyyy`)} ${dateFormat(Time, `GMT:HH:MM:ss`)}] ${channelName} (${message.author.username}#${message.author.discriminator}): ${message.content}\n`)
-            await WebhookRLY.send(message.content, {avatarURL: message.author.avatarURL({format: "webp", dynamic: true}), username: message.author.username})
-        } catch (error) {console.log(error)}
-    }
 })
 
 //umm it's complicated so why don't you just read it.
