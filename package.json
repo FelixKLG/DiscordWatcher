@@ -6,17 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Horizon-Networks-Development/HorizonDiscordINTE.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Horizon-Networks-Development/HorizonDiscordINTE/issues"
+    "url": "https://stackoverflow.com/"
   },
-  "homepage": "https://github.com/Horizon-Networks-Development/HorizonDiscordINTE#readme",
+  "homepage": "https://felixtesting.xyz",
   "dependencies": {
     "dateformat": "^4.5.1",
     "discord.js": "^12.5.3",
