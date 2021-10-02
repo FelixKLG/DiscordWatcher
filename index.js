@@ -10,7 +10,7 @@ require(`dotenv`).config()
 //require dotenv
 
 
-const client = new discord.Client();
+const client = new discord.Client({intents: ["GUILD_MESSAGES"]});
 //define discord client
 const WebhookRLY = new discord.WebhookClient(process.env.webhookuid, process.env.WEBHOOKTKN)
 //define discord webhook client
@@ -51,7 +51,7 @@ client.once(`ready`, () => {
     //hide online status
 })
 
-client.on(`message`,  async message => {
+client.on(`messageCreate`,  async message => {
     let channelName = message.channel.name
     if ((channelsAry.includes(message.channel.id))) {
     try {await chatDB.create({
