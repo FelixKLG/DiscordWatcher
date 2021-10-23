@@ -15,10 +15,9 @@
   "homepage": "https://felixtesting.xyz",
   "dependencies": {
     "dateformat": "^4.5.1",
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2",
-    "sqlite3": "^5.0.2"
+    "sequelize": "^6.6.2"
   }
 }
