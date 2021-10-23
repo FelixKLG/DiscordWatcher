@@ -1,6 +1,6 @@
 const discord = require(`discord.js`);
 //require discord
-const dateFormat = require(`dateFormat`);
+const dateFormat = require(`dateformat`);
 //require dateFormat
 const fs = require(`fs`);
 //require FileSystem
