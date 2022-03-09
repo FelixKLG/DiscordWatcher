@@ -12,7 +12,7 @@ require(`dotenv`).config()
 
 const client = new discord.Client({intents: ["GUILD_MESSAGES"]});
 //define discord client
-const WebhookRLY = new discord.WebhookClient(process.env.webhookuid, process.env.WEBHOOKTKN)
+const WebhookRLY = new discord.WebhookClient(process.env.WEBHOOKUID, process.env.WEBHOOKTKN)
 //define discord webhook client
 client.login(process.env.TOKEN).then()
 //discord client login
